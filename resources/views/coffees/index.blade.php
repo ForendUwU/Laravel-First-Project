@@ -34,14 +34,7 @@
 
         @foreach($coffeeArr as $coffee)
             <div>
-                {{ $loop->index }} {{ $coffee['type'] }} -- {{ $coffee['amount'] }} -- {{ $coffee['price'] }}
-
-                @if($loop->first)
-                    <span> first iteration</span>
-                @endif
-                @if($loop->last)
-                    <span> last iteration</span>
-                @endif
+                {{ $coffee -> name }} - {{ $coffee->type }} - {{ $coffee->amount }}
             </div>
         @endforeach
     </div>

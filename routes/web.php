@@ -20,4 +20,12 @@ Route::get('/', function () {
 
 Route::get('/coffeeList', [CoffeeController::class, 'index']);
 
+Route::get('/coffeeList/create', [CoffeeController::class, 'create']);
+
+Route::post('/coffeeList', [CoffeeController::class, 'store']);
+
 Route::get('/coffeeList/{id}', [CoffeeController::class, 'show']);
+
+Route::delete('/coffeeList/{id}', [CoffeeController::class, 'delete']);
+
+

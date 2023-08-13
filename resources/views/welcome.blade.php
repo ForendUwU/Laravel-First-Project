@@ -21,6 +21,10 @@
             <img src="/img/coffee.png" alt="pizza logo">  
         </div>
         <div class = "title flex-center">BEST COFFEE</div>
+        <p class="msg">{{ session('msg') }}</p>
+        <div class="flex-center">
+            <a href="/coffeeList/create">Order</a>
+        </div>
     </div>
 </div>
 @endsection
