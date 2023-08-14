@@ -18,14 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/coffeeList', [CoffeeController::class, 'index']);
-
-Route::get('/coffeeList/create', [CoffeeController::class, 'create']);
-
-Route::post('/coffeeList', [CoffeeController::class, 'store']);
-
-Route::get('/coffeeList/{id}', [CoffeeController::class, 'show']);
-
-Route::delete('/coffeeList/{id}', [CoffeeController::class, 'delete']);
+Route::get('/coffeeList', [CoffeeController::class, 'index'])->name('coffeeList.index')->middleware('auth');
+Route::get('/coffeeList/create', [CoffeeController::class, 'create'])->name('coffeeList.create');
+Route::post('/coffeeList', [CoffeeController::class, 'store'])->name('coffeList.store');
+Route::get('/coffeeList/{id}', [CoffeeController::class, 'show'])->name('coffeeList.show')->middleware('auth');
+Route::delete('/coffeeList/{id}', [CoffeeController::class, 'delete'])->name('coffeeList.delete')->middleware('auth');
 
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -7,6 +7,11 @@ use App\Models\Coffee;
 
 class CoffeeController extends Controller
 {
+    #To protect all CoffeeCntroller class functions from unnecessary using 
+    #public function __construct() {
+    #    $this->middleware('auth');
+    #}
+
     public function index() {
         #$coffeeArr = [
         #    ['type' => 'americano', 'amount' => '200ml','price' => 10],
@@ -26,7 +31,7 @@ class CoffeeController extends Controller
         #$coffeeArr = Coffee::OrderBy('name') -> get();
         #$coffeeArr = Coffee::where('amount', '200 ml.') -> get();
         #$coffeeArr = Coffee::latest() -> get();
-
+   
         return view('coffees.index', [
             'coffeeArr' => $coffeeArr
         ]);

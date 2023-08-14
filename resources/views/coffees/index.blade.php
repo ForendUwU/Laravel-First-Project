@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="flex-center position-ref full-height">
@@ -34,7 +34,7 @@
 
         @foreach($coffeeArr as $coffee)
             <div>
-                {{ $coffee -> name }} - {{ $coffee->type }} - {{ $coffee->amount }}
+                <h4><a href="/coffeeList/{{ $coffee->id }}">{{ $coffee -> name }}</a></h4>
             </div>
         @endforeach
     </div>
